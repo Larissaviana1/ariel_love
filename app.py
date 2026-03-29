@@ -39,7 +39,7 @@ Você é a minha pessoa favorita no mundo inteiro ❤️
 st.write("")
 
 # Contador de tempo juntos
-data_inicio = datetime(2025, 10, 14)
+data_inicio = datetime(2025, 10, 10)
 hoje = datetime.now()
 dias = (hoje - data_inicio).days
 
