@@ -16,11 +16,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# 🎵 Música de fundo (autoplay)
+# 🎵 Música de fundo (YouTube escondido)
 st.markdown("""
-    <audio autoplay loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    </audio>
+    <iframe width="0" height="0"
+    src="https://www.youtube.com/embed/nyuo9-OjNNg?autoplay=1&loop=1&playlist=nyuo9-OjNNg"
+    frameborder="0"
+    allow="autoplay">
+    </iframe>
 """, unsafe_allow_html=True)
 
 # Título
