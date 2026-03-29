@@ -45,8 +45,7 @@ st.progress(100)
 st.write("")
 
 # Música
-st.markdown("### Nossa música 🎶")
-st.video("https://www.youtube.com/watch?v=2Vv-BfVoq4g")
+st.video("https://youtu.be/nyuo9-OjNNg?si=pmyGIi-2WOAlgLWS")
 
 # Rodapé
 st.markdown("""
