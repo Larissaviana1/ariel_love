@@ -82,7 +82,7 @@ else:
     # Música
     st.markdown("""
     <iframe width="0" height="0"
-    src="https://youtu.be/3NSWjhPwAYQ?si=eqVHroK9HGPc0WWm"
+    rc="https://www.youtube.com/embed/7r1-7t9CkqE?autoplay=1&loop=1&playlist=7r1-7t9CkqE"
     frameborder="0"
     allow="autoplay">
     </iframe>
