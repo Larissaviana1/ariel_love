@@ -4,7 +4,7 @@ st.markdown(""
 <h3 style='text-align:center;'>
     Nível de amor por você 💖
 </h3>
-""", unsafe_allow_html=True)
+"", unsafe_allow_html=True)
 
 nivel = 10  # total de corações
 placeholder = st.empty()
