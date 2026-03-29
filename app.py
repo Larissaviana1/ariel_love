@@ -5,33 +5,28 @@ import time
 # Configuração
 st.set_page_config(page_title="Para você ❤️", layout="wide")
 
-# 🎨 ESTILO DARK + BOTÃO GIGANTE CENTRAL
+# 🎨 Fundo escuro (forma correta)
 st.markdown("""
 <style>
-
-/* Fundo escuro */
-body {
-    background-color: #0f0f0f;
-}
-.main {
+[data-testid="stAppViewContainer"] {
     background-color: #0f0f0f;
 }
 
-/* Centralizar tudo na tela */
-.center-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    flex-direction: column;
+[data-testid="stHeader"] {
+    background-color: transparent;
+}
+
+[data-testid="stToolbar"] {
+    display: none;
 }
 
 /* Botão gigante */
 div.stButton > button {
+    width: 100%;
     background: linear-gradient(45deg, #ff4b6e, #ff758f);
     color: white;
-    font-size: 30px;
-    padding: 20px 60px;
+    font-size: 32px;
+    padding: 25px;
     border-radius: 50px;
     border: none;
     cursor: pointer;
@@ -41,18 +36,18 @@ div.stButton > button {
 
 /* Hover */
 div.stButton > button:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
     box-shadow: 0px 0px 40px rgba(255, 75, 110, 0.9);
 }
 
-/* Animação pulsando */
+/* Animação */
 @keyframes pulse {
     0% {
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(255, 75, 110, 0.7);
     }
     70% {
-        transform: scale(1.08);
+        transform: scale(1.05);
         box-shadow: 0 0 0 30px rgba(255, 75, 110, 0);
     }
     100% {
@@ -60,28 +55,29 @@ div.stButton > button:hover {
         box-shadow: 0 0 0 0 rgba(255, 75, 110, 0);
     }
 }
-
 </style>
 """, unsafe_allow_html=True)
 
-# Estado inicial
+# Estado
 if "started" not in st.session_state:
     st.session_state.started = False
 
-# 🌑 Tela inicial (botão gigante central)
+# 🔥 Tela inicial CENTRALIZADA
 if not st.session_state.started:
 
-    st.markdown('<div class="center-screen">', unsafe_allow_html=True)
+    # Espaço vertical
+    st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
 
-    st.markdown("<h1 style='color:white;'>💖</h1>", unsafe_allow_html=True)
+    col1, col2, col3 = st.columns([1,2,1])
 
-    if st.button("💌 Abrir minha surpresa"):
-        st.session_state.started = True
-        st.rerun()
+    with col2:
+        st.markdown("<h1 style='text-align:center; color:white;'>💖</h1>", unsafe_allow_html=True)
 
-    st.markdown('</div>', unsafe_allow_html=True)
+        if st.button("💌 Abrir minha surpresa"):
+            st.session_state.started = True
+            st.rerun()
 
-# 🌸 Conteúdo após clique
+# 🌸 Conteúdo
 else:
     # Música
     st.markdown("""
@@ -93,11 +89,11 @@ else:
     """, unsafe_allow_html=True)
 
     # Título
-    st.markdown("<h1 style='text-align: center; color: #ff4b6e;'>💖 Para você meu bem 💖</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:center; color:#ff4b6e;'>💖 Para você meu bem 💖</h1>", unsafe_allow_html=True)
 
-    # Mensagem
+    # Texto
     st.markdown("""
-    <div style='text-align: center; font-size:20px; color:white;'>
+    <div style='text-align:center; font-size:20px; color:white;'>
     Desde que você entrou na minha vida, tudo ficou mais bonito e alegre.<br>
     Você é a minha pessoa favorita no mundo inteiro ❤️
     </div>
@@ -151,14 +147,8 @@ else:
     }
 
     @keyframes floatUp {
-        0% {
-            transform: translateY(0) scale(1);
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(-900px) scale(1.5);
-            opacity: 0;
-        }
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-900px); opacity: 0; }
     }
     </style>
 
