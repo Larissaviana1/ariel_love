@@ -4,7 +4,7 @@ from datetime import datetime
 # Configuração
 st.set_page_config(page_title="Para você ❤️", layout="centered")
 
-# Fundo
+# Fundo romântico
 st.markdown("""
     <style>
     body {
@@ -16,7 +16,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Estado
+# Estado inicial
 if "started" not in st.session_state:
     st.session_state.started = False
 
@@ -30,7 +30,7 @@ if not st.session_state.started:
 
 # Depois do clique → aparece tudo
 else:
-    # Música
+    # Música (The First Time - Damiano David)
     st.markdown("""
         <iframe width="0" height="0"
         src="https://www.youtube.com/embed/6d5SS0gS5bM?autoplay=1&loop=1&playlist=6d5SS0gS5bM"
@@ -52,16 +52,29 @@ else:
 
     st.write("")
 
-    # Contador
-    data_inicio = datetime(2025, 10, 14)
+    # Contador inteligente
+    data_inicio = datetime(2025, 10, 10)
     dias = (datetime.now() - data_inicio).days
 
-    st.markdown(f"<h3 style='text-align:center;'>Estamos juntos há {dias} dias 💕</h3>", unsafe_allow_html=True)
+    if dias >= 0:
+        texto = f"Estamos juntos há {dias} dias 💕"
+    else:
+        texto = f"Faltam {abs(dias)} dias para o nosso começo 💖"
+
+    st.markdown(f"<h3 style='text-align:center;'>{texto}</h3>", unsafe_allow_html=True)
 
     st.write("")
 
-    # Barra
-    st.markdown("### Nível de amor por você:")
+    # Barra de amor com vários corações
+    st.markdown("""
+    <h3 style='display: flex; align-items: center; gap: 10px;'>
+        Nível de amor por você
+        <span style='color:#ff4b6e; font-size:18px;'>
+            ❤️ ❤️ ❤️ ❤️ ❤️
+        </span>
+    </h3>
+    """, unsafe_allow_html=True)
+
     st.progress(100)
 
     # Rodapé
