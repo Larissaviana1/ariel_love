@@ -1,6 +1,6 @@
 import time
 
-st.markdown("""
+st.markdown(""
 <h3 style='text-align:center;'>
     Nível de amor por você 💖
 </h3>
