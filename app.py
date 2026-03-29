@@ -5,7 +5,7 @@ import time
 # Configuração
 st.set_page_config(page_title="Para você ❤️", layout="centered")
 
-# Fundo romântico
+# 🎨 Estilo geral + botão animado
 st.markdown("""
 <style>
 body {
@@ -13,6 +13,43 @@ body {
 }
 .main {
     background-color: #fff0f5;
+}
+
+/* BOTÃO INCRÍVEL */
+div.stButton > button {
+    display: block;
+    margin: 0 auto;
+    background: linear-gradient(45deg, #ff4b6e, #ff758f);
+    color: white;
+    font-size: 22px;
+    padding: 14px 35px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+div.stButton > button:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 25px rgba(255, 75, 110, 0.8);
+}
+
+/* Animação pulsando */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 75, 110, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(255, 75, 110, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 75, 110, 0);
+    }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -24,14 +61,14 @@ if "started" not in st.session_state:
 # Tela inicial
 if not st.session_state.started:
     st.markdown("<h1 style='text-align: center;'>💖</h1>", unsafe_allow_html=True)
-    
-    if st.button("Clique aqui"):
+
+    if st.button("💌 Abrir minha surpresa"):
         st.session_state.started = True
         st.rerun()
 
 # Conteúdo após clique
 else:
-    # 🎵 Música
+    # Música
     st.markdown("""
     <iframe width="0" height="0"
     src="https://www.youtube.com/embed/6d5SS0gS5bM?autoplay=1&loop=1&playlist=6d5SS0gS5bM"
@@ -40,10 +77,10 @@ else:
     </iframe>
     """, unsafe_allow_html=True)
 
-    # 💖 Título
+    # Título
     st.markdown("<h1 style='text-align: center; color: #ff4b6e;'>💖 Para você meu bem 💖</h1>", unsafe_allow_html=True)
 
-    # 💌 Mensagem
+    # Mensagem
     st.markdown("""
     <div style='text-align: center; font-size:18px;'>
     Desde que você entrou na minha vida, tudo ficou mais bonito e alegre.<br>
@@ -53,7 +90,7 @@ else:
 
     st.write("")
 
-    # ⏳ Contador
+    # Contador
     data_inicio = datetime(2025, 10, 10)
     dias = (datetime.now() - data_inicio).days
 
@@ -66,7 +103,7 @@ else:
 
     st.write("")
 
-    # 💖 Barra animada de amor
+    # Barra animada de amor
     st.markdown("<h3 style='text-align:center;'>Nível de amor por você 💖</h3>", unsafe_allow_html=True)
 
     nivel = 10
@@ -84,10 +121,10 @@ else:
 
         time.sleep(0.3)
 
-    # ⏱️ Espera 5 segundos antes da animação final
+    # Espera 5 segundos
     time.sleep(5)
 
-    # 💕 Corações subindo
+    # Corações subindo
     st.markdown("""
     <style>
     .heart {
