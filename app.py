@@ -20,7 +20,7 @@ st.markdown("""
 if "started" not in st.session_state:
     st.session_state.started = False
 
-# Tela inicial (ANTES DE TUDO)
+# Tela inicial
 if not st.session_state.started:
     st.markdown("<h1 style='text-align: center;'>💖</h1>", unsafe_allow_html=True)
     
@@ -28,9 +28,9 @@ if not st.session_state.started:
         st.session_state.started = True
         st.rerun()
 
-# Depois do clique → aparece tudo
+# Conteúdo após clique
 else:
-    # Música (The First Time - Damiano David)
+    # Música
     st.markdown("""
         <iframe width="0" height="0"
         src="https://www.youtube.com/embed/6d5SS0gS5bM?autoplay=1&loop=1&playlist=6d5SS0gS5bM"
@@ -52,7 +52,7 @@ else:
 
     st.write("")
 
-    # Contador inteligente
+    # Contador
     data_inicio = datetime(2025, 10, 10)
     dias = (datetime.now() - data_inicio).days
 
@@ -65,17 +65,24 @@ else:
 
     st.write("")
 
-    # Barra de amor com vários corações
+    # Título da barra
     st.markdown("""
-    <h3 style='display: flex; align-items: center; gap: 10px;'>
-        Nível de amor por você
-        <span style='color:#ff4b6e; font-size:18px;'>
-            ❤️ ❤️ ❤️ ❤️ ❤️
-        </span>
+    <h3 style='text-align:center;'>
+        Nível de amor por você 💖
     </h3>
     """, unsafe_allow_html=True)
 
-    st.progress(100)
+    # Barra de corações
+    nivel = 10  # pode mudar se quiser 😏
+
+    coracoes = "❤️" * nivel
+    vazios = "🤍" * (10 - nivel)
+
+    st.markdown(f"""
+    <div style='text-align:center; font-size:28px;'>
+    {coracoes}{vazios}
+    </div>
+    """, unsafe_allow_html=True)
 
     # Rodapé
     st.markdown("""
