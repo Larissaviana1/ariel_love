@@ -94,7 +94,8 @@ else:
     # Texto
     st.markdown("""
     <div style='text-align:center; font-size:20px; color:white;'>
-    Desde que você entrou na minha vida, tudo ficou mais bonito e alegre.<br>
+    Desde que você entrou na minha vida
+    tudo ficou mais bonito e alegre😊❤️.<br>
     Você é a minha pessoa favorita no mundo inteiro ❤️
     </div>
     """, unsafe_allow_html=True)
@@ -106,9 +107,7 @@ else:
     dias = (datetime.now() - data_inicio).days
 
     if dias >= 0:
-        texto = f"Estamos juntos há {dias} dias 💕"
-    else:
-        texto = f"Faltam {abs(dias)} dias para o nosso começo 💖"
+        texto = f"Estamos juntas há {dias} dias 💕"
 
     st.markdown(f"<h3 style='text-align:center; color:white;'>{texto}</h3>", unsafe_allow_html=True)
 
