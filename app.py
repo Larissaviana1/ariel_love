@@ -16,6 +16,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# 🎵 Música de fundo (autoplay)
+st.markdown("""
+    <audio autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+""", unsafe_allow_html=True)
+
 # Título
 st.markdown("<h1 style='text-align: center; color: #ff4b6e;'>💖 Para você meu bem 💖</h1>", unsafe_allow_html=True)
 
@@ -30,7 +37,7 @@ Você é a minha pessoa favorita no mundo inteiro ❤️
 st.write("")
 
 # Contador de tempo juntos
-data_inicio = datetime(2025, 10, 14)  # ALTERA AQUI
+data_inicio = datetime(2025, 10, 14)
 hoje = datetime.now()
 dias = (hoje - data_inicio).days
 
@@ -43,9 +50,6 @@ st.markdown("### Nível de amor por você:")
 st.progress(100)
 
 st.write("")
-
-# Música
-st.video("https://youtu.be/nyuo9-OjNNg?si=pmyGIi-2WOAlgLWS")
 
 # Rodapé
 st.markdown("""
