@@ -17,7 +17,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Título
-st.markdown("<h1 style='text-align: center; color: #ff4b6e;'>💖 Para o amor da minha vida 💖</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #ff4b6e;'>💖 Para você meu bem 💖</h1>", unsafe_allow_html=True)
 
 # Mensagem
 st.markdown("""
@@ -30,7 +30,7 @@ Você é a minha pessoa favorita no mundo inteiro ❤️
 st.write("")
 
 # Contador de tempo juntos
-data_inicio = datetime(2023, 1, 1)  # ALTERA AQUI
+data_inicio = datetime(2025, 10, 14)  # ALTERA AQUI
 hoje = datetime.now()
 dias = (hoje - data_inicio).days
 
