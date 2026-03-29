@@ -1,10 +1,10 @@
 import streamlit as st
 from datetime import datetime
 
-# Configuração da página
+# Configuração
 st.set_page_config(page_title="Para você ❤️", layout="centered")
 
-# Fundo romântico
+# Fundo
 st.markdown("""
     <style>
     body {
@@ -16,42 +16,45 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# 🎵 Música de fundo (The First Time - Damiano David)
-st.markdown("""
-    <iframe width="0" height="0"
-    src="https://www.youtube.com/embed/6d5SS0gS5bM?autoplay=1&loop=1&playlist=6d5SS0gS5bM"
-    frameborder="0"
-    allow="autoplay">
-    </iframe>
-""", unsafe_allow_html=True)
+# Estado da música
+if "play_music" not in st.session_state:
+    st.session_state.play_music = False
 
-# Título
+# Botão para ativar música
+if not st.session_state.play_music:
+    if st.button("💖 Clique aqui"):
+        st.session_state.play_music = True
+        st.rerun()
+
+# Música (só toca depois do clique)
+if st.session_state.play_music:
+    st.markdown("""
+        <iframe width="0" height="0"
+        src="https://www.youtube.com/embed/6d5SS0gS5bM?autoplay=1&loop=1&playlist=6d5SS0gS5bM"
+        frameborder="0"
+        allow="autoplay">
+        </iframe>
+    """, unsafe_allow_html=True)
+
+# Conteúdo
 st.markdown("<h1 style='text-align: center; color: #ff4b6e;'>💖 Para você meu bem 💖</h1>", unsafe_allow_html=True)
 
-# Mensagem
 st.markdown("""
 <div style='text-align: center; font-size:18px;'>
-Desde que você entrou na minha vida, tudo ficou mais bonito e alegre.<br>
+Desde que você entrou na minha vida, tudo ficou mais bonito e alegre 😊❤️.<br>
 Você é a minha pessoa favorita no mundo inteiro ❤️
 </div>
 """, unsafe_allow_html=True)
 
-st.write("")
-
-# Contador de tempo juntos
-data_inicio = datetime(2025, 10, 10)
-hoje = datetime.now()
-dias = (hoje - data_inicio).days
+# Contador
+data_inicio = datetime(2025, 10, 14)
+dias = (datetime.now() - data_inicio).days
 
 st.markdown(f"<h3 style='text-align:center;'>Estamos juntos há {dias} dias 💕</h3>", unsafe_allow_html=True)
 
-st.write("")
-
-# Barra de amor
+# Barra
 st.markdown("### Nível de amor por você:")
 st.progress(100)
-
-st.write("")
 
 # Rodapé
 st.markdown("""
