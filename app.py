@@ -120,7 +120,7 @@ else:
         time.sleep(0.3)
 
     # ⏱️ Espera
-    time.sleep(5)
+    time.sleep(6)
 
     # 💕 Corações subindo
     st.markdown("""
