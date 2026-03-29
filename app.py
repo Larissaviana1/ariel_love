@@ -3,27 +3,36 @@ from datetime import datetime
 import time
 
 # Configuração
-st.set_page_config(page_title="Para você ❤️", layout="centered")
+st.set_page_config(page_title="Para você ❤️", layout="wide")
 
-# 🎨 Estilo geral + botão animado
+# 🎨 ESTILO DARK + BOTÃO GIGANTE CENTRAL
 st.markdown("""
 <style>
+
+/* Fundo escuro */
 body {
-    background-color: #fff0f5;
+    background-color: #0f0f0f;
 }
 .main {
-    background-color: #fff0f5;
+    background-color: #0f0f0f;
 }
 
-/* BOTÃO INCRÍVEL */
+/* Centralizar tudo na tela */
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
+}
+
+/* Botão gigante */
 div.stButton > button {
-    display: block;
-    margin: 0 auto;
     background: linear-gradient(45deg, #ff4b6e, #ff758f);
     color: white;
-    font-size: 22px;
-    padding: 14px 35px;
-    border-radius: 40px;
+    font-size: 30px;
+    padding: 20px 60px;
+    border-radius: 50px;
     border: none;
     cursor: pointer;
     animation: pulse 1.5s infinite;
@@ -32,8 +41,8 @@ div.stButton > button {
 
 /* Hover */
 div.stButton > button:hover {
-    transform: scale(1.08);
-    box-shadow: 0px 0px 25px rgba(255, 75, 110, 0.8);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 40px rgba(255, 75, 110, 0.9);
 }
 
 /* Animação pulsando */
@@ -43,14 +52,15 @@ div.stButton > button:hover {
         box-shadow: 0 0 0 0 rgba(255, 75, 110, 0.7);
     }
     70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 20px rgba(255, 75, 110, 0);
+        transform: scale(1.08);
+        box-shadow: 0 0 0 30px rgba(255, 75, 110, 0);
     }
     100% {
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(255, 75, 110, 0);
     }
 }
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -58,15 +68,20 @@ div.stButton > button:hover {
 if "started" not in st.session_state:
     st.session_state.started = False
 
-# Tela inicial
+# 🌑 Tela inicial (botão gigante central)
 if not st.session_state.started:
-    st.markdown("<h1 style='text-align: center;'>💖</h1>", unsafe_allow_html=True)
+
+    st.markdown('<div class="center-screen">', unsafe_allow_html=True)
+
+    st.markdown("<h1 style='color:white;'>💖</h1>", unsafe_allow_html=True)
 
     if st.button("💌 Abrir minha surpresa"):
         st.session_state.started = True
         st.rerun()
 
-# Conteúdo após clique
+    st.markdown('</div>', unsafe_allow_html=True)
+
+# 🌸 Conteúdo após clique
 else:
     # Música
     st.markdown("""
@@ -82,7 +97,7 @@ else:
 
     # Mensagem
     st.markdown("""
-    <div style='text-align: center; font-size:18px;'>
+    <div style='text-align: center; font-size:20px; color:white;'>
     Desde que você entrou na minha vida, tudo ficou mais bonito e alegre.<br>
     Você é a minha pessoa favorita no mundo inteiro ❤️
     </div>
@@ -99,12 +114,12 @@ else:
     else:
         texto = f"Faltam {abs(dias)} dias para o nosso começo 💖"
 
-    st.markdown(f"<h3 style='text-align:center;'>{texto}</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='text-align:center; color:white;'>{texto}</h3>", unsafe_allow_html=True)
 
     st.write("")
 
-    # Barra animada de amor
-    st.markdown("<h3 style='text-align:center;'>Nível de amor por você 💖</h3>", unsafe_allow_html=True)
+    # Barra animada
+    st.markdown("<h3 style='text-align:center; color:white;'>Nível de amor por você 💖</h3>", unsafe_allow_html=True)
 
     nivel = 10
     placeholder = st.empty()
@@ -114,14 +129,14 @@ else:
         vazios = "🤍" * (nivel - i)
 
         placeholder.markdown(f"""
-        <div style='text-align:center; font-size:28px;'>
+        <div style='text-align:center; font-size:30px;'>
         {coracoes}{vazios}
         </div>
         """, unsafe_allow_html=True)
 
         time.sleep(0.3)
 
-    # Espera 5 segundos
+    # Espera
     time.sleep(5)
 
     # Corações subindo
@@ -130,9 +145,9 @@ else:
     .heart {
         position: fixed;
         bottom: -50px;
-        font-size: 24px;
+        font-size: 26px;
         animation: floatUp 5s linear infinite;
-        opacity: 0.8;
+        opacity: 0.9;
     }
 
     @keyframes floatUp {
@@ -141,7 +156,7 @@ else:
             opacity: 1;
         }
         100% {
-            transform: translateY(-800px) scale(1.5);
+            transform: translateY(-900px) scale(1.5);
             opacity: 0;
         }
     }
@@ -163,7 +178,7 @@ else:
     # Rodapé
     st.markdown("""
     <hr>
-    <div style='text-align:center;'>
+    <div style='text-align:center; color:white;'>
     Feito com ❤️ só para você
     </div>
     """, unsafe_allow_html=True)
