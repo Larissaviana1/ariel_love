@@ -60,8 +60,6 @@ if not st.session_state.started:
     col1, col2, col3 = st.columns([1,2,1])
 
     with col2:
-        st.markdown("<h1 style='text-align:center; color:white;'>💖</h1>", unsafe_allow_html=True)
-
         if st.button("💌 Abrir minha surpresa"):
             st.session_state.started = True
             st.rerun()
