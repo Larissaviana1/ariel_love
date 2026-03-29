@@ -22,7 +22,7 @@ st.markdown("<h1 style='text-align: center; color: #ff4b6e;'>💖 Para você meu
 # Mensagem
 st.markdown("""
 <div style='text-align: center; font-size:18px;'>
-Desde que você entrou na minha vida, tudo ficou mais bonito.<br>
+Desde que você entrou na minha vida, tudo ficou mais bonito e alegre.<br>
 Você é a minha pessoa favorita no mundo inteiro ❤️
 </div>
 """, unsafe_allow_html=True)
