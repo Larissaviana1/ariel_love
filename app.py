@@ -5,7 +5,7 @@ import time
 # Configuração
 st.set_page_config(page_title="Para você ❤️", layout="wide")
 
-# 🎨 Fundo escuro (forma correta)
+# 🎨 Estilo geral
 st.markdown("""
 <style>
 [data-testid="stAppViewContainer"] {
@@ -34,26 +34,16 @@ div.stButton > button {
     transition: all 0.3s ease;
 }
 
-/* Hover */
 div.stButton > button:hover {
     transform: scale(1.08);
     box-shadow: 0px 0px 40px rgba(255, 75, 110, 0.9);
 }
 
-/* Animação */
+/* Animação botão */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 75, 110, 0.7);
-    }
-    70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 30px rgba(255, 75, 110, 0);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 75, 110, 0);
-    }
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 75, 110, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 30px rgba(255, 75, 110, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 75, 110, 0); }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -62,10 +52,9 @@ div.stButton > button:hover {
 if "started" not in st.session_state:
     st.session_state.started = False
 
-# 🔥 Tela inicial CENTRALIZADA
+# 🌑 Tela inicial
 if not st.session_state.started:
 
-    # Espaço vertical
     st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns([1,2,1])
@@ -73,13 +62,13 @@ if not st.session_state.started:
     with col2:
         st.markdown("<h1 style='text-align:center; color:white;'>💖</h1>", unsafe_allow_html=True)
 
-        if st.button("💌 Abrir surpresa"):
+        if st.button("💌 Abrir minha surpresa"):
             st.session_state.started = True
             st.rerun()
 
 # 🌸 Conteúdo
 else:
-    # Música
+    # 🎵 Música (Baco)
     st.markdown("""
     <iframe width="0" height="0"
     src="https://www.youtube.com/embed/tiE3lsIa0Vc?autoplay=1&loop=1&playlist=tiE3lsIa0Vc"
@@ -88,32 +77,33 @@ else:
     </iframe>
     """, unsafe_allow_html=True)
 
-    # Título
+    # 💖 Título
     st.markdown("<h1 style='text-align:center; color:#ff4b6e;'>💖 Para você meu bem 💖</h1>", unsafe_allow_html=True)
 
-    # Texto
+    # 💌 Mensagem
     st.markdown("""
     <div style='text-align:center; font-size:20px; color:white;'>
-    Desde que você entrou na minha vida
-    tudo ficou mais bonito e alegre😊❤️.<br>
+    Desde que você entrou na minha vida, tudo ficou mais bonito e alegre.<br>
     Você é a minha pessoa favorita no mundo inteiro ❤️
     </div>
     """, unsafe_allow_html=True)
 
     st.write("")
 
-    # Contador
+    # ⏳ Contador
     data_inicio = datetime(2025, 10, 10)
     dias = (datetime.now() - data_inicio).days
 
     if dias >= 0:
         texto = f"Estamos juntas há {dias} dias 💕"
+    else:
+        texto = f"Faltam {abs(dias)} dias para o nosso começo 💖"
 
     st.markdown(f"<h3 style='text-align:center; color:white;'>{texto}</h3>", unsafe_allow_html=True)
 
     st.write("")
 
-    # Barra animada
+    # 💖 Barra animada
     st.markdown("<h3 style='text-align:center; color:white;'>Nível de amor por você 💖</h3>", unsafe_allow_html=True)
 
     nivel = 10
@@ -131,10 +121,10 @@ else:
 
         time.sleep(0.3)
 
-    # Espera
+    # ⏱️ Espera
     time.sleep(5)
 
-    # Corações subindo
+    # 💕 Corações subindo
     st.markdown("""
     <style>
     .heart {
@@ -167,7 +157,7 @@ else:
     # Rodapé
     st.markdown("""
     <hr>
-    <div style='text-align:center; color:white;'>
+    <div style='text-align:center; color:white; font-size:20px;'>
     Feito com ❤️ só para você
     </div>
     """, unsafe_allow_html=True)
