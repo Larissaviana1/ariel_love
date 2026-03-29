@@ -73,7 +73,7 @@ if not st.session_state.started:
     with col2:
         st.markdown("<h1 style='text-align:center; color:white;'>💖</h1>", unsafe_allow_html=True)
 
-        if st.button("💌 Abrir minha surpresa"):
+        if st.button("💌 Abrir surpresa"):
             st.session_state.started = True
             st.rerun()
 
@@ -82,7 +82,7 @@ else:
     # Música
     st.markdown("""
     <iframe width="0" height="0"
-    src="https://www.youtube.com/embed/6d5SS0gS5bM?autoplay=1&loop=1&playlist=6d5SS0gS5bM"
+    src="https://www.youtube.com/embed/nyuo9-OjNNg?autoplay=1&loop=1&playlist=nyuo9-OjNNg"
     frameborder="0"
     allow="autoplay">
     </iframe>
