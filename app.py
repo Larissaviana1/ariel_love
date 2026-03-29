@@ -1,11 +1,10 @@
 import streamlit as st
 from datetime import datetime
-import base64
 
 # Configuração da página
 st.set_page_config(page_title="Para você ❤️", layout="centered")
 
-# Fundo com cor suave
+# Fundo romântico
 st.markdown("""
     <style>
     body {
@@ -43,14 +42,11 @@ st.write("")
 st.markdown("### Nível de amor por você:")
 st.progress(100)
 
-# Fotos
-st.markdown("### Nossos momentos 📸")
-st.image("foto1.jpg", caption="Um dos nossos momentos favoritos")
-st.image("foto2.jpg", caption="Outro dia especial")
+st.write("")
 
-# Playlist (opcional)
+# Música
 st.markdown("### Nossa música 🎶")
-st.video("https://www.youtube.com/watch?v=2Vv-BfVoq4g")  # pode trocar
+st.video("https://www.youtube.com/watch?v=2Vv-BfVoq4g")
 
 # Rodapé
 st.markdown("""
