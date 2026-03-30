@@ -60,7 +60,7 @@ if not st.session_state.started:
     col1, col2, col3 = st.columns([1,2,1])
 
     with col2:
-        if st.button("💌 Abrir minha surpresa"):
+        if st.button("💌 Abrir surpresa"):
             st.session_state.started = True
             st.rerun()
 
